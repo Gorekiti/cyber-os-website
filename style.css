@@ -1,0 +1,631 @@
+/* Базовые настройки окружения в стиле Даркнет/Гранж */
+body {
+    background-image: url('images/main_bg.jpg'); /* Путь к твоему фото фона */
+    background-size: cover;                      /* Растягивает фото на весь экран */
+    background-position: center;                 /* Центрирует изображение */
+    background-attachment: fixed;                /* Фон не будет прокручиваться вместе с сайтом */
+    background-repeat: no-repeat;                /* Запрещает картинке дублироваться плиткой */
+    background-color: #0b0c10;                   /* Запасной цвет, пока картинка грузится */
+    
+    color: #aeb3bd;
+    font-family: 'Ubuntu Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Главный фрейм окна приложения */
+.window-frame {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #16171d;
+    border: 3px solid #282a36;
+    border-radius: 8px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+}
+
+/* Верхний тулбар окна */
+.window-header {
+    background-color: #0f1015;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #222430;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
+    color: #d1d4db;
+    letter-spacing: 1px;
+}
+
+.header-controls span {
+    margin-left: 15px;
+    cursor: pointer;
+    color: #6272a4;
+}
+.header-controls span:hover {
+    color: #ff5555;
+}
+
+/* Баннерная зона */
+.banner-zone {
+    height: 180px;
+    background-color: #2b1111;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-bottom: 3px solid #1c1d24;
+}
+
+/* Позиционирование аватара и статуса внутри баннера */
+.profile-header-wrapper {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    width: 90%;
+    max-width: 500px;
+    z-index: 10;
+}
+
+.avatar-container {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    border: 4px solid #ffffff; /* Фирменная красная обводка */
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(219, 61, 61, 0.5);
+    background-color: #000;
+    flex-shrink: 0;
+}
+
+.main-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Облачко статуса в стиле Дискорд */
+.status-box {
+    background-color: #121319;
+    border: 1px solid #2d313f;
+    border-radius: 12px;
+    padding: 6px 14px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.status-label {
+    font-size: 10px;
+    color: #6272a4;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.status-text {
+    color: #f8f8f2;
+    font-size: 13px;
+}
+
+/* Сетка контента */
+.content-grid {
+    padding: 50px 25px 25px 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* Стилизация кастомных блоков-контейнеров */
+.crypto-box {
+    background-color: #1a1c23;
+    border: 1px solid #2d313f;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Скошенные зеленые теги заголовков */
+.box-tag {
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    background-color: #1a1c23;
+    padding: 2px 10px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    border-left: 3px solid #8be9fd;
+}
+
+.green-text {
+    color: #50fa7b; /* Фирменный кислотно-зеленый */
+    text-shadow: 0 0 5px rgba(80, 250, 123, 0.4);
+}
+
+.box-body {
+    padding: 20px 15px 15px 15px;
+    min-height: 110px;
+}
+
+/* Текст внутри Обо мне */
+.bio-text p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #e2e4e9;
+}
+
+/* Блок сотрудничества */
+.split-coop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.coop-text {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #9699a3;
+    max-width: 65%;
+}
+
+/* Визуализатор аудиоволны */
+/* Визуализатор аудиоволны */
+.audio-preview {
+    background: #0f1015;
+    border: 1px solid #282a36;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    width: 100px;
+    
+    /* ДОБАВЬ ЭТИ ТРИ СТРОЧКИ: */
+    cursor: pointer;          /* Делает курсор пальчиком при наведении */
+    position: relative;       /* Включает позиционирование */
+    z-index: 999;             /* Выталкивает блок на самый передний план поверх всего */
+    pointer-events: auto !important; /* Намертво разрешает клики мышкой */
+}
+
+.wave-lines {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.wave-lines span {
+    width: 3px;
+    background-color: #ff79c6;
+    border-radius: 2px;
+    animation: bounce 0.8s infinite alternate;
+    animation-play-state: paused; /* Изначально полоски стоят на паузе */
+}
+
+/* Когда музыка играет, JS добавляет класс .playing, и полоски оживают */
+.wave-lines.playing span {
+    animation-play-state: running;
+}
+
+/* Разная высота полосок */
+.wave-lines span:nth-child(1) { height: 60%; animation-delay: 0.1s; }
+.wave-lines span:nth-child(2) { height: 100%; animation-delay: 0.3s; }
+.wave-lines span:nth-child(3) { height: 40%; animation-delay: 0.5s; }
+.wave-lines span:nth-child(4) { height: 80%; animation-delay: 0.2s; }
+.wave-lines span:nth-child(5) { height: 50%; animation-delay: 0.4s; }
+
+.audio-label {
+    font-size: 10px;
+    color: #6272a4;
+}
+
+/* Ряд медиа-карточек (Блок Проекты) */
+.media-row {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.media-card {
+    flex: 1;
+    text-align: center;
+}
+
+.media-thumb {
+    height: 75px;
+    background-color: #0f1015;
+    border: 1px solid #282a36;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.audio-thumb {
+    background-color: #0c0d12;
+}
+
+.media-label {
+    font-size: 11px;
+    color: #6272a4;
+}
+
+/* Блок Соцсети и кастомные кнопки */
+.social-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.secret-circle-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #ff79c6;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+.secret-circle-btn img { width: 100%; height: 100%; object-fit: cover; }
+.secret-circle-btn:hover { transform: rotate(15deg) scale(1.1); }
+
+.social-btn {
+    flex: 1;
+    min-width: 80px;
+    background-color: #121319;
+    border: 1px solid #282a36;
+    border-radius: 6px;
+    padding: 8px 4px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-icon { font-size: 16px; margin-bottom: 2px; }
+.btn-title { font-size: 11px; font-weight: bold; }
+.btn-sub { font-size: 8px; color: #6272a4; margin-top: 1px; }
+
+/* Кастомные неоновые обводки для каждой соцсети при ховере */
+.discord-btn { border-bottom: 2px solid #5865F2; }
+.discord-btn:hover { box-shadow: 0 0 12px rgba(88, 101, 242, 0.4); background: #181a26; }
+
+.insta-btn { border-bottom: 2px solid #ff79c6; }
+.insta-btn:hover { box-shadow: 0 0 12px rgba(255, 121, 198, 0.4); background: #261822; }
+
+.btn-title, .btn-sub {
+    pointer-events: none; /* Чтобы текст внутри ссылок не мешал кликам */
+}
+.tg-btn { border-bottom: 2px solid #8be9fd; }
+.tg-btn:hover { box-shadow: 0 0 12px rgba(139, 233, 253, 0.4); background: #142229; }
+
+/* Анимация волны */
+@keyframes bounce {
+    from { transform: scaleY(0.3); }
+    to { transform: scaleY(1.1); }
+}
+
+/* Адаптивность для мобилок */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    .media-row {
+        flex-direction: column;
+    }
+}
+
+/* Затемнение и размытие фона за окном */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 5, 8, 0.85);
+    backdrop-filter: blur(4px); /* Красивое размытие */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease-in-out;
+}
+
+/* Класс, который будет включать окно через JS */
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Само всплывающее окошко */
+.modal-window {
+    width: 90%;
+    max-width: 450px;
+    background-color: #121319;
+    border: 2px solid #2d313f;
+    border-radius: 6px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    transform: scale(0.85);
+    transition: transform 0.25s ease-in-out;
+}
+
+.modal-overlay.active .modal-window {
+    transform: scale(1);
+}
+
+/* Шапка модального окна */
+.modal-header {
+    background-color: #0f1015;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2d313f;
+    font-size: 12px;
+    font-weight: bold;
+    color: #6272a4;
+}
+
+/* Кнопка закрытия (крестик) */
+.close-modal {
+    font-size: 20px;
+    cursor: pointer;
+    color: #6272a4;
+    line-height: 1;
+    transition: color 0.15s;
+}
+.close-modal:hover {
+    color: #ff5555;
+}
+
+/* Внутренности окна */
+.modal-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Настройки для картинок-иконок в соцсетях */
+.social-icon-img {
+    width: 20px;          /* Оптимальный размер под твои кнопки */
+    height: 20px;
+    object-fit: contain;  /* Чтобы картинка не сжималась и не деформировалась */
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
+/* Картинка-превью внутри окна рисунков */
+.modal-preview-img {
+    width: 100%;
+    height: auto;               /* Убираем жесткое ограничение по высоте */
+    max-height: 350px;          /* Задаем адекватный максимум, чтобы окно не улетало вниз */
+    object-fit: contain;        /* Картинка теперь будет масштабироваться ПОЛНОСТЬЮ без обрезки */
+    background-color: #0b0c10;  /* Темный фон по бокам/сверху, если арт узкий, чтоб не ломать стиль */
+    border: 1px solid #282a36;  /* Твоя дефолтная обводка */
+    border-radius: 4px;
+}
+
+/* Блок под хакерскую консоль в окне кода */
+.code-console-box {
+    background-color: #050508;
+    border: 1px solid #282a36;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.console-line {
+    margin: 4px 0;
+}
+
+.modal-text {
+    font-size: 13px;
+    line-height: 1.4;
+    color: #aeb3bd;
+    margin: 0;
+}
+
+/* Настройки интерактивных карточек-ссылок */
+.project-link {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.2s ease-in-out;
+    
+    /* ДОБАВЛЯЕМ СЮДА: */
+    cursor: pointer;                  /* Делает курсор пальчиком */
+    position: relative;               /* Включает позиционирование */
+    z-index: 999;                     /* Выталкивает на передний план */
+    pointer-events: auto !important;  /* Принудительно разрешает клики мышкой */
+}
+
+/* Кнопка-ссылка внутри модалки */
+.modal-btn-link {
+    display: block;
+    text-align: center;
+    background-color: #1a1c23;
+    border: 1px solid #2d313f;
+    color: #ff79c6;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.2s;
+    margin-top: 5px;
+}
+.modal-btn-link:hover {
+    background-color: #212430;
+    border-color: #ff79c6;
+    box-shadow: 0 0 10px rgba(255, 121, 198, 0.2);
+}
+/* Общий пиксельный стиль для превью всех трех карточек */
+.code-thumb,
+.art-thumb,
+.games-thumb {
+    background-color: #050508 !important; /* Угольно-черный фон для всех */
+    font-size: 11px;                      /* Немного уменьшил, чтоб длинные слова не вылезали */
+    font-family: 'Press Start 2P', cursive; /* Тот самый пиксельный шрифт */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+/* --- 1. КАРТОЧКА РИСУНКИ (Розовый ховер) --- */
+.art-thumb {
+    color: #ff79c6; /* Розовый текст по дефолту */
+    text-shadow: 0 0 5px rgba(255, 121, 198, 0.4);
+}
+.project-link:hover .art-thumb {
+    border-color: #ff79c6;
+    box-shadow: 0 0 10px rgba(255, 121, 198, 0.3);
+    background-color: #090a0f !important;
+}
+
+/* --- 2. КАРТОЧКА КОД (Зеленый ховер) --- */
+.code-thumb {
+    color: #50fa7b; /* Кислотно-зеленый текст по дефолту */
+    text-shadow: 0 0 5px rgba(80, 250, 123, 0.4);
+}
+.project-link:hover .code-thumb {
+    border-color: #50fa7b;
+    box-shadow: 0 0 10px rgba(80, 250, 123, 0.3);
+    background-color: #090a0f !important;
+}
+
+/* --- 3. КАРТОЧКА ИГРЫ (Фиолетово-розовый ховер) --- */
+.games-thumb {
+    color: #bd93f9; /* Светло-фиолетовый / розовый текст по дефолту */
+    text-shadow: 0 0 5px rgba(189, 147, 249, 0.4);
+}
+.project-link:hover .games-thumb {
+    border-color: #ff79c6; /* Розовый ховер, как у тебя был для игр */
+    box-shadow: 0 0 10px rgba(255, 121, 198, 0.3);
+    background-color: #090a0f !important;
+}
+
+/* Фиксированный контейнер с прокруткой внутри модалки */
+.games-list-container {
+    max-height: 380px;         /* Ограничиваем высоту, чтобы окно не растягивалось */
+    overflow-y: auto;          /* Включаем вертикальный скролл */
+    padding-right: 8px;        /* Отступ справа, чтобы текст не лип к скроллбару */
+}
+
+/* Стилизация кастомного нефорского скроллбара для списка игр */
+.games-list-container::-webkit-scrollbar {
+    width: 4px;
+}
+.games-list-container::-webkit-scrollbar-track {
+    background: #0f1015;
+}
+.games-list-container::-webkit-scrollbar-thumb {
+    background: #2d313f;
+    border-radius: 4px;
+}
+.games-list-container::-webkit-scrollbar-thumb:hover {
+    background: #ff79c6;       /* Розовый при наведении на ползунок */
+}
+
+/* Разделы категорий */
+.games-section {
+    margin-bottom: 20px;
+}
+
+.games-section-title {
+    font-size: 10px;
+    font-family: 'Press Start 2P', cursive;
+    color: #6272a4;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Строка игры (карточка) */
+.game-item-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #16171d;
+    border: 1px solid #282a36;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+.game-item-row:hover {
+    border-color: #44475a;
+    background-color: #1a1c23;
+}
+
+/* Контейнер для постера (пропорции ДС) */
+.game-poster-wrapper {
+    width: 46px;
+    height: 62px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #050508;
+    flex-shrink: 0;
+}
+
+.game-poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Инфо об игре */
+.game-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.game-item-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #f8f8f2;
+}
+
+/* Базовый тег-статус */
+.game-tag-status {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 9px;
+    background-color: #282a36;
+    color: #8be9fd;             /* Голубой по дефолту */
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: 'Ubuntu Mono', monospace;
+    border: 1px solid #44475a;
+}
+
+/* Кастомные цвета под твои статусы */
+.game-tag-status.status-often {
+    color: #50fa7b;             /* Зеленый для "часто" */
+    border-color: rgba(80, 250, 123, 0.3);
+}
+
+.game-tag-status.status-rare {
+    color: #ffb86c;             /* Оранжевый для "редко" */
+    border-color: rgba(255, 184, 108, 0.3);
+}
+
+.game-tag-status.status-wish {
+    color: #ff79c6;             /* Розовый для вишлиста */
+    border-color: rgba(255, 121, 198, 0.3);
+}

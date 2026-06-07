@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOSE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="window-frame">
+        
+        <div class="window-header">
+            <div class="header-left">
+                <span class="skull-icon">💀</span>
+                <span class="window-title">CLOSE</span>
+            </div>
+            <div class="header-controls">
+                <span>7</span>
+                <span>_</span>
+                <span>X</span>
+            </div>
+        </div>
+
+        <div class="banner-zone" style="background-image: url('images/banner.jpg');">
+            <div class="profile-header-wrapper">
+                <div class="avatar-container">
+                    <img src="images/avatar.jpg" alt="Avatar" class="main-avatar">
+                </div>
+                <div class="status-box">
+                    <div class="status-label">Status</div>
+                    <div class="status-text">🩸 Вся эта кровь мне ♡</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            
+            <div class="crypto-box">
+                <div class="box-tag green-text">ОБО МНЕ</div>
+                <div class="box-body bio-text">
+                    <p class="location-line">// info: 21 y.o. / Kyiv, Ukraine</p>
+                    <p>Йоу, я Катя. Занимаюсь программированием, много рисую и живу с постоянно включенной музыкой в наушниках.</p>
+                    <p>По натуре я интроверт, так что комфортнее всего мне в кооп-играх с друзьями. Иногда перебираю треки на укулеле и немного пою.</p>
+                    <p>Коллекционирую фигурки, стикерпаки и эстетичные банки.</p>
+                    <p>В плане кода - автоматизирую задачи, пишу скрипты на заказ и развиваю собственный ПК-мессенджер.</p>
+                    <span class="corner-glitch"></span>
+                </div>
+            </div>
+
+            <div class="crypto-box">
+                <div class="box-tag green-text">СОТРУДНИЧЕСТВО</div>
+                <div class="box-body split-coop">
+                    <div class="coop-text">
+                        // SERVICES & COOPERATION:<br>
+                        • Custom Code Development (Python/JS/C#)<br>
+                        • Digital Art / Sketches<br>
+                        Готова к коммерческим заказам и интересным таскам. Пиши в любой удобный мессенджер.
+                    </div>
+                    <div class="audio-preview" id="ambient-player">
+                        <audio id="cyber-audio" src="images/Sqwore_Кошка.mp3" loop></audio>
+
+                        <div class="wave-lines">
+                            <span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="audio-label">Звук</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crypto-box full-width-mobile">
+                <div class="box-tag green-text">МОИ УВЛЕЧЕНИЯ И ПРОЕКТЫ</div>
+                <div class="box-body media-row">
+                    
+                    <a href="#" class="media-card project-link" id="trigger-art">
+                        <div class="media-thumb art-thumb">
+                            <span class="terminal-prompt">>_ Arts</span>
+                        </div>
+                        <div class="media-label">Рисунки</div>
+                    </a>
+
+                    <a href="#" class="media-card project-link" id="trigger-code">
+                        <div class="media-thumb code-thumb">
+                            <span class="terminal-prompt">>_ Code</span>
+                        </div>
+                        <div class="media-label">Код</div>
+                    </a>
+
+                    <a href="#" class="media-card project-link" id="trigger-games">
+                        <div class="media-thumb games-thumb">
+                            <span class="terminal-prompt">>_ Games</span>
+                        </div>
+                        <div class="media-label">Игры</div>
+                    </a>
+
+                </div>
+            </div>
+
+           <div class="crypto-box">
+                <div class="box-tag green-text">СОЦСЕТИ</div>
+                <div class="box-body social-row">
+                    
+                    <a href="#" class="secret-circle-btn">
+                        <img src="images/inet.png" alt="mini">
+                    </a>
+
+                    <!-- DISCORD -->
+                    <a href="https://discord.gg/Gj8BgteE" target="_blank" class="social-btn discord-btn">
+                        <div class="btn-icon">
+                            <img src="images/discord-logo.png" alt="discord" class="social-icon-img">
+                        </div>
+                        <div class="btn-title">DISCORD</div>
+                        <div class="btn-sub">КАНАЛ</div>
+                    </a>
+
+                    <!-- INSTA -->
+                    <a href="https://www.instagram.com/funty_arts/" target="_blank" class="social-btn insta-btn">
+                        <div class="btn-icon">
+                            <img src="images/insta_icon.png" alt="insta" class="social-icon-img">
+                        </div>
+                        <div class="btn-title">INSTA</div>
+                        <div class="btn-sub">С РИСУНКАМИ</div>
+                    </a>
+
+                    <!-- ТГК -->
+                    <a href="https://t.me/kit_space" target="_blank" class="social-btn tg-btn">
+                        <div class="btn-icon">
+                            <img src="images/tg_icon.png" alt="tg" class="social-icon-img">
+                        </div>
+                        <div class="btn-title">ТГК</div>
+                        <div class="btn-sub">ПРОЕКТЫ</div>
+                    </a>
+
+                </div>
+            </div>
+
+        </div> </div> <div class="modal-overlay" id="modal-art">
+        <div class="modal-window">
+            <div class="modal-header">
+                <span>👁️ ART_VIEWER.EXE</span>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img src="images/мев.jpg" alt="My Art" class="modal-preview-img">
+                <p class="modal-text">Скетчи, диджитал и тонна незавершенных холстов, которые когда-нибудь дождутся своего часа. Рисую всякое. Если залетает такой вайб - ссылка ниже.</p>
+                <a href="https://www.instagram.com/funty_arts/" target="_blank" class="modal-btn-link">Перейти в Instagram -></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-code">
+        <div class="modal-window">
+            <div class="modal-header">
+                <span>💻 TERMINAL.EXE</span>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+               <div class="code-console-box">
+                    <p class="console-line green-text">> loading_project_info...</p>
+                    <p class="console-line">[dev] KitiCor Messenger (PC) - синхронный плеер, оверлеи. пилю потихоньку.</p>
+                    <p class="console-line">[stack] python // js // c# - скрипты, боты и всякие кастомные таски.</p>
+                </div>
+                <p class="modal-text">Пишу софт на заказ, ковыряю архитектуру систем и автоматизирую то, что лень делать руками. Если есть интересные задачи или нужен кастомный скрипт - пиши.</p>
+                <a href="https://wordle-multiplayer-91mu.onrender.com" target="_blank" class="modal-btn-link">Проектик с игрой -></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для ИГР -->
+    <div class="modal-overlay" id="modal-games">
+        <div class="modal-window">
+            <div class="modal-header">
+                <span>🎮 GAMES_LIST.EXE</span>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body games-list-container">
+                
+                <!-- КАТЕГОРИЯ 1 -->
+                <div class="games-section">
+                    <div class="games-section-title">Текущие игры</div>
+                    
+                    <!-- Cry of Fear -->
+                    <div class="game-item-row">
+                        <div class="game-poster-wrapper">
+                            <img src="images/game_cryoffear.jpg" alt="Cry of Fear" class="game-poster-img">
+                        </div>
+                        <div class="game-item-info">
+                            <div class="game-item-title">Cry of Fear</div>
+                            <div class="game-tag-status">active</div>
+                        </div>
+                    </div>
+
+                    <!-- ROBLOX -->
+                    <div class="game-item-row">
+                        <div class="game-poster-wrapper">
+                            <img src="images/game_roblox.png" alt="ROBLOX" class="game-poster-img">
+                        </div>
+                        <div class="game-item-info">
+                            <div class="game-item-title">ROBLOX</div>
+                            <div class="game-tag-status">active</div>
+                        </div>
+                    </div>
+
+                    <!-- Transformice -->
+                    <div class="game-item-row">
+                        <div class="game-poster-wrapper">
+                            <img src="images/game_transformice.jpg" alt="Transformice" class="game-poster-img">
+                        </div>
+                        <div class="game-item-info">
+                            <div class="game-item-title">Transformice</div>
+                            <div class="game-tag-status status-often">active</div>
+                        </div>
+                    </div>
+
+                    <div class="game-item-row">
+                        <div class="game-poster-wrapper">
+                            <img src="images/game_phasmo.jpg" alt="Phasmophobia" class="game-poster-img">
+                        </div>
+                        <div class="game-item-info">
+                            <div class="game-item-title">Phasmophobia</div>
+                            <div class="game-tag-status">sometimes</div>
+                        </div>
+                    </div>
+
+                    <!-- REPO -->
+                    <div class="game-item-row">
+                        <div class="game-poster-wrapper">
+                            <img src="images/game_repo.jpg" alt="REPO" class="game-poster-img">
+                        </div>
+                        <div class="game-item-info">
+                            <div class="game-item-title">REPO</div>
+                            <div class="game-tag-status status-rare">sometimes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- КАТЕГОРИЯ 2 -->
+                <div class="games-section">
+                    <div class="games-section-title">Хочу поиграть</div>
+                    
+                    <!-- Pyromaniac -->
+                    <div class="game-item-row">
+                        <div class="game-poster-wrapper">
+                            <img src="images/game_pyromaniac.jpg" alt="Pyromaniac" class="game-poster-img">
+                        </div>
+                        <div class="game-item-info">
+                            <div class="game-item-title">Pyromaniac</div>
+                            <div class="game-tag-status status-wish">wishlist</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
